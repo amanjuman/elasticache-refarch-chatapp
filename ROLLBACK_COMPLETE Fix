@@ -1,0 +1,28 @@
+If you having trouble with ROLLBACK_COMPLETE. Do. follow this.
+You have to create two IAM roles:
+
+1st Role:
+
+1. Open the Roles page in the IAM console.
+2. Choose Roles.
+3. Choose Create New Role.
+4. Under AWS Service Roles, choose Elastic Beanstalk.
+4. Select your use case "Elastic Beanstalk - Customizable"
+5. Attach the AWSElasticBeanstalkEnhancedHealth and AWSElasticBeanstalkService
+6. Choose Next:Review.
+3. As name, type "aws-elasticbeanstalk-service-role", and then choose Next Step.
+7. Choose Create Role.
+
+2nd Role:
+
+1. Open the Roles page in the IAM console.
+2. Choose Roles.
+3. Choose Create New Role.
+4. Under AWS Service Roles, choose EC2 .
+4. Select your use case "EC2"
+5. Attach the AWSElasticBeanstalkWebTier, AWSElasticBeanstalkWorkerTier and AWSElasticBeanstalkMulticontainerDocker.
+6. Choose Next:Review.
+3. As name, type "aws-elasticbeanstalk-ec2-role", and then choose Next Step.
+7. Choose Create Role.
+
+When you have done making two roles, then add both of that with Any Policy that you like to add as IAM. This case I would suggest to add these two roles with "AWSElasticBeanstalkFullAccess"
